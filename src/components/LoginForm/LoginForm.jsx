@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/auth/operations';
 
-export default function ContactForm() {
+export default function LoginForm() {
   const dispatch = useDispatch();
 
   const initialValues = {
@@ -22,7 +22,7 @@ export default function ContactForm() {
     actions.resetForm();
   };
   //=========================================================
-  // validationSchema = { StyleSchema }
+
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={StyleSchema}>
       <Form className={css.container}>

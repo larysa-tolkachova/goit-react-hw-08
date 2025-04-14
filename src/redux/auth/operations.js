@@ -31,22 +31,32 @@ export const login = createAsyncThunk('auth/login', async (registrationdata, thu
 
 export const logout = createAsyncThunk('auth/logout', async () => {
   await axios.post('/users/logout');
+  setAuthHeader('');
 });
+
+export const refreshUser = createAsyncThunk(
+  'auth/refresh',
+  async (_, thunkAPI) => {
+    try {
+      const reduxState = thunkAPI.getState();
+      setAuthHeader(`Bearer ${reduxState.data.token}`);
+
+      const response = await axios.get('/users/current');
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  },
+  {
+    condition: (_, thunkAPI) => {
+      const reduxState = thunkAPI.getState();
+      return reduxState.data.token !== null;
+    },
+  }
+);
 
 //Larysa   seagull2610@gmail.com   123456789
 
 //poly   k@k.com   123456789
 
 //Igor   sss@kjhkgf.com 123456789
-
-export const refreshUser = createAsyncThunk('auth/refresh', async (_, thunkAPI) => {
-  try {
-    const reduxState = thunkAPI.getState();
-    setAuthHeader(`Bearer ${reduxState.data.token}`);
-
-    const response = await axios.get('/users/current');
-    return response.data;
-  } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
-  }
-});
