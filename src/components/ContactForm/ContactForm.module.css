@@ -1,0 +1,25 @@
+.container {
+  width: 350px;
+  height: auto;
+  border: 3px solid #646cff;
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.error {
+  color: red;
+}
+
+.btn {
+  padding: 10px;
+  margin: 0 auto;
+  justify-content: center;
+}

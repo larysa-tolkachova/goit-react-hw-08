@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  gap: 10px;
+  padding: 10px 20px;
+  color: #7b68ee;
+  font-size: 20px;
+}
+
+/* .logout {
+    color: #7b68ee;
+  font-size: 20px;
+} */
