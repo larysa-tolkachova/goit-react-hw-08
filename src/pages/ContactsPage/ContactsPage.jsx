@@ -4,6 +4,7 @@ import ContactList from '../../components/ContactList/ContactList';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts } from '../../redux/contacts/operations';
+import css from './ContactsPage.module.css';
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
@@ -13,11 +14,13 @@ export default function ContactsPage() {
   }, [dispatch]);
 
   return (
-    <div>
-      <h2>Phonebook</h2>
+    <div className={css.container}>
       <ContactForm />
-      <SearchBox />
-      <ContactList />
+      <div>
+        <h2>Contacts</h2>
+        <SearchBox />
+        <ContactList />
+      </div>
     </div>
   );
 }

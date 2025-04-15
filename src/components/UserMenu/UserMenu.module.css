@@ -1,12 +1,24 @@
 .container {
   display: flex;
-  gap: 10px;
+  gap: 20px;
   padding: 10px 20px;
   color: #7b68ee;
   font-size: 20px;
 }
 
-/* .logout {
-    color: #7b68ee;
+.logout {
+  color: #696969;
   font-size: 20px;
-} */
+  border-radius: 0;
+  border: 0;
+  padding: 0;
+}
+
+.logout:hover {
+  color: #191970;
+}
+
+.logout:focus,
+.logout:focus-visible {
+  outline: none;
+}

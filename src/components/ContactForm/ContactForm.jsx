@@ -38,14 +38,14 @@ export default function ContactForm() {
           <label htmlFor={nameId}>
             <b>Name</b>
           </label>
-          <Field type="text" name="name" id={nameId}></Field>
+          <Field type="text" name="name" id={nameId} className={css.field}></Field>
           <ErrorMessage name="name" component="span" className={css.error}></ErrorMessage>
         </div>
         <div className={css.input}>
           <label htmlFor={numberId}>
             <b>Number</b>
           </label>
-          <Field type="text" name="number" id={numberId} placeholder="123-45-67"></Field>
+          <Field type="text" name="number" id={numberId} placeholder="123-45-67" className={css.field}></Field>
           <ErrorMessage name="number" component="span" className={css.error}></ErrorMessage>
         </div>
         <button type="submit" className={css.btn}>

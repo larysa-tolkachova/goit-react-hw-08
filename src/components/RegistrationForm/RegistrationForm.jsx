@@ -32,7 +32,7 @@ export default function ContactForm() {
           <label>
             <b>Name</b>
           </label>
-          <Field type="text" name="name"></Field>
+          <Field type="text" name="name" className={css.field}></Field>
           <ErrorMessage name="name" component="span" className={css.error}></ErrorMessage>
         </div>
 
@@ -40,7 +40,7 @@ export default function ContactForm() {
           <label>
             <b>Email</b>
           </label>
-          <Field type="email" name="email"></Field>
+          <Field type="email" name="email" className={css.field}></Field>
           <ErrorMessage name="email" component="span" className={css.error}></ErrorMessage>
         </div>
 
@@ -48,7 +48,7 @@ export default function ContactForm() {
           <label>
             <b>Password</b>
           </label>
-          <Field type="password" name="password"></Field>
+          <Field type="password" name="password" className={css.field}></Field>
           <ErrorMessage name="password" component="span" className={css.error}></ErrorMessage>
         </div>
 
