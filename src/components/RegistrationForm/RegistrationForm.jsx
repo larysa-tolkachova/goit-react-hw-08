@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/operations';
 
-export default function ContactForm() {
+export default function RegistrationForm() {
   const dispatch = useDispatch();
 
   const initialValues = {
