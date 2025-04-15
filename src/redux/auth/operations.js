@@ -57,8 +57,6 @@ export const refreshUser = createAsyncThunk(
   }
 );
 
-//Larysa   seagull2610@gmail.com   123456789
-
 //poly   k@k.com   123456789
 
 //Igor   sss@kjhkgf.com 123456789

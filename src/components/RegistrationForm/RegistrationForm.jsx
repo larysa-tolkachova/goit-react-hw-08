@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import css from './RegistrationForm.module.css';
-// import * as Yup from 'yup';
+import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/operations';
 
@@ -13,20 +13,19 @@ export default function ContactForm() {
     password: '',
   };
 
-  // const StyleSchema = Yup.object().shape({
-  //   name: Yup.string().min(3, 'To Short!').max(50, 'To long!').required('This field is required'),
-  //   email: Yup.string().email('Invalid email format').required('This field is required'),
-  //   password: Yup.string().min(3, 'To Short!').max(50, 'To long!').required('This field is required'),
-  // });
+  const StyleSchema = Yup.object().shape({
+    name: Yup.string().min(3, 'To Short!').max(50, 'To long!').required('This field is required'),
+    email: Yup.string().email('Invalid email format').required('This field is required'),
+    password: Yup.string().min(3, 'To Short!').max(50, 'To long!').required('This field is required'),
+  });
 
   const handleSubmit = (values, actions) => {
     dispatch(register(values));
     actions.resetForm();
   };
-  //=========================================================
-  // validationSchema = { StyleSchema }
+
   return (
-    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+    <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={StyleSchema}>
       <Form className={css.container}>
         <div className={css.input}>
           <label>
